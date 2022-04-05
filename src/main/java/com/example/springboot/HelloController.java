@@ -23,6 +23,6 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String index2(){
-		return "this isnt the place for lagging behind in studies";
+		return "this isn't the place for lagging behind in studies";
 	}
 }
