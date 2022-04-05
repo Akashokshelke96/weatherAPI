@@ -27,15 +27,16 @@ public class HelloController {
             HttpResponse<String> unirestResponse = weatherService.getWeather(city, noOfDays);
             String result = unirestResponse.getBody();//result here is a JSON received from response
 
+            //consuming JSON using the easy preliminary way
             Object obj = jsonParser.parse(result);
             JSONObject jsonObject = (JSONObject) obj;
 
-            JSONObject locationObj = (JSONObject) jsonObject.get("location");
-            String name = (String) locationObj.get("name");
+            JSONObject locationObj = (JSONObject) jsonObject.get("location");//here we have put "location" from json to locationObj
+            String name = (String) locationObj.get("name"); // //getting "name" from "location" value from json to this NAME value
             String region = (String) locationObj.get("region");
 
 
-            JSONObject currentObj = (JSONObject) jsonObject.get("current");
+            JSONObject currentObj = (JSONObject) jsonObject.get("current"); // here we have put "current" from json to currentObj
             double temp_c = (Double) currentObj.get("temp_c");
 
             System.out.println(" Name = " + name + " Region = " + region + " Temp_C " +temp_c);
