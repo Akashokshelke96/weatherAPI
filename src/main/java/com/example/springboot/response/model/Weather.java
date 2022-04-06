@@ -6,7 +6,7 @@ public class Weather { //POJO i.e plain old Java Object
 
     public Weather() { //default constructor
 
-    }// JACKSON WILL TAKE CARE OF THE response being converted in to JSON for the received response.
+    }// JACKSON WILL TAKE CARE OF THE response being converted in to JSON for the received response as per the criterion
 
     public Weather(String cityName, String regionName) { //constructor with all the arguments
         this.cityName = cityName;
